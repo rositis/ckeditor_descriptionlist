@@ -1,0 +1,6 @@
+name        = CKEditor Definition List
+description = "Adds Definition Lists to CKEditor, providing the ability to create a definition list using the dl, dt and dd HTML tags."
+backdrop = 1.x
+type = module
+package = User interface
+dependencies[] = ckeditor
