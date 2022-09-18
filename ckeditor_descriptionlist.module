@@ -1,1 +1,34 @@
 <?php
+/**
+ * Implements hook_ckeditor_plugin().
+ *
+ * @return array $plugins
+ */
+function ckeditor_descriptionlist_ckeditor_plugins() {
+  $plugins = array();
+  $plugins['descriptionlist'] = array(
+    'path' => backdrop_get_path('module', 'ckeditor_descriptionlist') . '/plugins/descriptionlist',
+    'load' => TRUE,
+    'file' => 'plugin.js',
+    'internal' => FALSE,
+    'buttons' => array(
+      'DescriptionList' => array(
+        'label' => t('Tag dl'),
+        'image' => backdrop_get_path('module', 'ckeditor_descriptionlist') . '/plugins/blocks/icons/descriptionlist.png',
+        'image_alternative' =>'{Tag dl}',
+      ),
+      'DescriptionTerm' => array(
+        'label' => t('Tag dd'),
+        'image' => backdrop_get_path('module', 'ckeditor_descriptionlist') . '/plugins/blocks/icons/descriptionterm.png',
+        'image_alternative' =>'{Tag dd}',
+      ),
+      'DescriptionValue' => array(
+        'label' => t('Tag dt'),
+        'image' => backdrop_get_path('module', 'ckeditor_descriptionlist') . '/plugins/blocks/icons/descriptionvalue.png',
+        'image_alternative' =>'{Tag dt}',
+      ),
+    ),
+  );
+
+  return $plugins;
+}
